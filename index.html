@@ -115,14 +115,14 @@
                var leftHand = document.createElement('a-entity');
                leftHand.setAttribute('id', 'leftHand');
                leftHand.setAttribute('laser-controls', 'hand: left');
-               leftHand.setAttribute('raycaster', 'objects: #nextVideoButton');
+               leftHand.setAttribute('raycaster', 'objects: .clickable');
                // add left controller to scene
                sceneEl.appendChild(leftHand);
                // create right controller
                var rightHand = document.createElement('a-entity');
                rightHand.setAttribute('id', 'rightHand');
                rightHand.setAttribute('laser-controls', 'hand: right');
-               rightHand.setAttribute('raycaster', 'objects: #nextVideoButton');
+               rightHand.setAttribute('raycaster', 'objects: .clickable');
                // add right controller to scene
                sceneEl.appendChild(rightHand);
            });
@@ -173,8 +173,8 @@
        <a-videosphere id="secondVideo" rotation="0 -90 0" src="#park" visible="false">
         </a-videosphere>
 
-        <a-text id="startText" class="clickable"  value="Click to Start" position="-0.5 2 -4 "></a-text>
-        <a-plane id="startPlane" position="-0.5 2 -4.2" width="4" color="black" click-start></a-plane>
+        <a-text id="startText" class="clickable"  value="Click to Start" position="-0.5 2 -4 " click-start></a-text>
+        <a-plane id="startPlane" class="clickable" position="-0.5 2 -4.2" width="4" color="black" click-start></a-plane>
 
 
         <!-- BUTTON -->
