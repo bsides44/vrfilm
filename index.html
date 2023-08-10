@@ -22,10 +22,15 @@
                planeModel.components.sound.playSound();
            }
            var startText = document.querySelector("#startText")
+           var startPlane = document.querySelector("#startPlane")
 
            if (startText) {
                 startText.removeEventListener('click', this.onClick)
                 startText.parentNode.removeChild(startText);
+           }
+           if (startPlane) {
+                startPlane.removeEventListener('click', this.onClick)
+                startPlane.parentNode.removeChild(startPlane);
            }
        }
    })
@@ -47,13 +52,17 @@
            }
 
            var startText = document.querySelector("#startText")
+           var startPlane = document.querySelector("#startPlane")
+
            if (startText) startText.parentNode.removeChild(startText);
-           var ea = document.querySelector("#nextVideoButton")
-           var er = document.querySelector("#nextText")
+           if (startPlane) startPlane.parentNode.removeChild(startPlane);
+           
+           var triangle = document.querySelector("#nextVideoButton")
+           var nextText = document.querySelector("#nextText")
 
            setTimeout(() => {
-            ea.setAttribute('visible', true)
-            er.setAttribute('visible', true)
+            triangle.setAttribute('visible', true)
+            nextText.setAttribute('visible', true)
            }, 3500);
 
            window.removeEventListener('click', this.onClick)
@@ -164,7 +173,8 @@
        <a-videosphere id="secondVideo" rotation="0 -90 0" src="#park" visible="false">
         </a-videosphere>
 
-        <a-text id="startText" class="clickable" click-start value="Click to Start" position="-0.5 2 -4 "></a-text>
+        <a-text id="startText" class="clickable"  value="Click to Start" position="-0.5 2 -4 "></a-text>
+        <a-plane id="startPlane" position="-0.5 2 -4.2" width="4" color="black" click-start></a-plane>
 
 
         <!-- BUTTON -->
